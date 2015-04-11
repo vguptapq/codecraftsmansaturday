@@ -19,6 +19,8 @@ var calculator = (function() {
     var serverUrl = 'http://192.168.192.128:8080/maths';
     var result = '';
 
+    // function core_math( operation )
+
 	function add(){
 
 		var obj = {
@@ -27,11 +29,12 @@ var calculator = (function() {
 			operation: "ADD"
 		};
 
+		var data = JSON.stringify(obj);
+
         $.ajax({
-            url : serverUrl,
-            type: "POST",
-            data : JSON.stringify(obj),
-            contentType :   'application/json',
+            url: serverUrl,
+            data: data,
+            dataType: 'json',
             success: function(data, textStatus, jqXHR)
             {
                 setResult(data.answer);
