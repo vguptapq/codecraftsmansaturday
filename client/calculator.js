@@ -32,6 +32,12 @@ var calculator = (function() {
     function divide(a,b){
         return 3;
     }
+
+    function successReturn(data, textStatus, jqXHR) {
+        result = data;
+    }
+
+
     return {
         add: add,
         sub: sub,
