@@ -1,27 +1,29 @@
 package com.craftsman.calc.model;
 
+import main.Operations;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MathRequest {
     private Double a;
     private Double b;
-    private Operation operation;
+    private Operations operation;
 
     public MathRequest() {
     }
 
-    public MathRequest(Double a, Double b, Operation operation) {
+    public MathRequest(Double a, Double b, Operations operation) {
         this.a = a;
         this.b = b;
         this.operation = operation;
     }
 
-    public Operation getOperation() {
+    public Operations getOperation() {
         return operation;
     }
 
-    public void setOperation(Operation operation) {
+    public void setOperation(Operations operation) {
         this.operation = operation;
     }
 
