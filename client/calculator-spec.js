@@ -15,5 +15,9 @@ describe('calculator', function() {
 	it('should return 1 when subtracting 2 from 1', function() {
 		expect(c.sub(2,1)).toEqual(1);
 	});
+
+	it('should return 6 when multiplying 3 by 2', function() {
+		expect(c.mult(3,2)).toEqual(6);
+	});
 6
 });

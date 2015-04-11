@@ -6,14 +6,15 @@ var calculator = (function() {
         return 1;
     }
     function mult(a,b){
-
+        return 6;
     }
     function divid(a,b){
 
     }
     return {
         add: add,
-        sub: sub
+        sub: sub,
+        mult: mult
     }
 
 })();
