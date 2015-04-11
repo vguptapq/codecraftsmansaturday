@@ -21,7 +21,7 @@ describe('calculator', function() {
 	});
 
 	it('should return 3 when dividing 6 by 2', function() {
-		expect(c.divid(6,2)).toEqual(2);
+		expect(c.divid(6,2)).toEqual(3);
 	});
 6
 });

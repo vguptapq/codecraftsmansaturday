@@ -8,14 +8,14 @@ var calculator = (function() {
     function mult(a,b){
         return 6;
     }
-    function divid(a,b){
+    function divide(a,b){
         return 2;
     }
     return {
         add: add,
         sub: sub,
         mult: mult,
-        divid: divid
+        divide: divide
     }
 
 })();
