@@ -1,4 +1,4 @@
-package main;
+package src.main.java.com.craftsman.code.engine;
 
 import java.util.List;
 

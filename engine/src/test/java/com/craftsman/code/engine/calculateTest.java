@@ -1,15 +1,15 @@
-package test;
+package src.test.java.com.craftsman.code.engine;
 
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-import main.Calculator;
-import main.Operations;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import src.main.java.com.craftsman.code.engine.Calculator;
+import src.main.java.com.craftsman.code.engine.Operations;
 
 public class calculateTest {
 	Calculator calculator;
