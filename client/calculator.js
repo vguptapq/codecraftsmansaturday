@@ -1,14 +1,32 @@
 var calculator = (function() {
 
+	function getFirstOperand() {
+	    return $('#first').val() / 1;
+	}
+
+	function getSecondOperand() {
+	    return $('#second').val() / 1;
+	}
+
+	function getResult() {
+	    return $('#calculator-display').val();
+	}
+
     var serverUrl = 'http://192.168.192.128:8080/maths';
     var result = '';
 
 	function add(a,b){
 
+		var obj = {
+			a: getFirstOperand(),
+			b: getSecondOperand(),
+			operation: "ADD"
+		};
+
         $.ajax({
             url : serverUrl,
             type: "POST",
-            data : '{"a": "1"}',
+            data : JSON.stringify(obj),
             contentType :   'application/json',
             success: function(data, textStatus, jqXHR)
             {
