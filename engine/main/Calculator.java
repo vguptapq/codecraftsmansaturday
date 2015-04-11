@@ -13,15 +13,24 @@ public class Calculator implements CalculateThis {
 		if (inputs.size() != 2) {
 			throw new Exception();
 		}
+		Double result =null;
 		switch (operation) {
 		case ADD:
-			return inputs.get(0) + inputs.get(1);
+			result = inputs.get(0) + inputs.get(1);
+			break;
 		case MULTIPLY:
-			return inputs.get(0) * inputs.get(1);
-		default:
-			break; 
+			result = inputs.get(0) * inputs.get(1);
+			break;
+		case DIVIDE:
+			if (inputs.get(1) == 0) {
+				throw new Exception();
+			}
+			result = inputs.get(0) / inputs.get(1);
+			break;
 		}
-		return 0.0;
+
+		return result;
+		
 	}
 
 }

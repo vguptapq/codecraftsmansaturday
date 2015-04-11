@@ -8,81 +8,103 @@ import java.util.List;
 import main.Calculator;
 import main.Operations;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class calculateTest {
+	Calculator calculator;
 
-	@Test(expected=Exception.class)
+	@Before
+	public void setUp() {
+		calculator = new Calculator();
+	}
+
+	@Test(expected = Exception.class)
 	public void testforexist() throws Exception {
-		Calculator calculator = new Calculator ();
 		Double result = calculator.CalculateThisSetOfStuff(null, null);
+		assertEquals(0.00, result, 0.00);
 	}
 
-	@Test(expected=Exception.class)
+	@Test(expected = Exception.class)
 	public void testfornulloperation() throws Exception {
-		Calculator calculator = new Calculator ();
-		List<Double> inputs = Arrays.asList(0.0,0.0);
+		List<Double> inputs = Arrays.asList(0.0, 0.0);
 		Double result = calculator.CalculateThisSetOfStuff(inputs, null);
+		assertEquals(0.00, result, 0.00);
 	}
 
-	@Test(expected=Exception.class)
+	@Test(expected = Exception.class)
 	public void testfornullinputs() throws Exception {
-		Calculator calculator = new Calculator ();
-		Double result = calculator.CalculateThisSetOfStuff(null, Operations.ADD);
+		Double result = calculator
+				.CalculateThisSetOfStuff(null, Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
 
-	@Test(expected=Exception.class)
+	@Test(expected = Exception.class)
 	public void testfortoomanyinputs() throws Exception {
-		Calculator calculator = new Calculator ();
 		List<Double> inputs = Arrays.asList(1.38, 2.56, 4.3);
-		Double result = calculator.CalculateThisSetOfStuff(inputs, Operations.ADD);
-		assertEquals (result, 3.94, 0.00);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
 
-	@Test(expected=Exception.class)
+	@Test(expected = Exception.class)
 	public void testfortoofewinputs() throws Exception {
-		Calculator calculator = new Calculator ();
 		List<Double> inputs = Arrays.asList(1.38);
-		Double result = calculator.CalculateThisSetOfStuff(inputs, Operations.ADD);
-		assertEquals (result, 3.94, 0.00);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
 
-	@Test(expected=Exception.class)
+	@Test(expected = Exception.class)
 	public void testfornoinputs() throws Exception {
-		Calculator calculator = new Calculator ();
 		List<Double> inputs = Arrays.asList();
-		Double result = calculator.CalculateThisSetOfStuff(inputs, Operations.ADD);
-		assertEquals (result, 3.94, 0.00);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
-	
+
 	@Test
 	public void testforsumzero() throws Exception {
-		Calculator calculator = new Calculator ();
-		List<Double> inputs = Arrays.asList(0.0,0.0);
-		Double result = calculator.CalculateThisSetOfStuff(inputs, Operations.ADD);
-		assertEquals (result, 0.00, 0.00);
+		List<Double> inputs = Arrays.asList(0.0, 0.0);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
-	
+
 	@Test
 	public void testforsumodoppositesigns() throws Exception {
-		Calculator calculator = new Calculator ();
-		List<Double> inputs = Arrays.asList(1.0,-1.0);
-		Double result = calculator.CalculateThisSetOfStuff(inputs, Operations.ADD);
-		assertEquals (result, 0.00, 0.00);
+
+		List<Double> inputs = Arrays.asList(1.0, -1.0);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.ADD);
+		assertEquals(0.00, result, 0.00);
 	}
-	
+
 	@Test
 	public void testformultiply() throws Exception {
-		Calculator calculator = new Calculator ();
-		List<Double> inputs = Arrays.asList(2.0,2.0);
-		Double result = calculator.CalculateThisSetOfStuff (inputs,Operations.MULTIPLY);
-		assertEquals (4.00, result, 0.00);
+
+		List<Double> inputs = Arrays.asList(2.0, 2.0);
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.MULTIPLY);
+		assertEquals(4.00, result, 0.00);
 	}
-	
-	@Test 
-	public void testForDivision() throws Exception { 
-	
+
+	@Test
+	public void testForDivisionOfTwoDivisiblePositiveNumbers() throws Exception {
+		List<Double> inputs = Arrays.asList(4.0, 2.0); 
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.DIVIDE);
+		assertEquals(2.0, result, 0.00); 
+
 	}
-	
-	
+
+	@Test(expected = Exception.class)
+	public void testForDivisionByZero() throws Exception {
+		List<Double> inputs = Arrays.asList(4.0, 0.0); 
+		Double result = calculator.CalculateThisSetOfStuff(inputs,
+				Operations.DIVIDE);
+		assertEquals(0.0, result, 0.00); 
+
+	}
+
 }
