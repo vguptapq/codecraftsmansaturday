@@ -12,6 +12,10 @@ var calculator = (function() {
 	    return $('#calculator-display').val();
 	}
 
+	function setResult( text ) {
+		$('#calculator-display').text(text);
+	}
+
     var serverUrl = 'http://192.168.192.128:8080/maths';
     var result = '';
 
@@ -30,16 +34,13 @@ var calculator = (function() {
             contentType :   'application/json',
             success: function(data, textStatus, jqXHR)
             {
-                result = data.answer;
+                setResult(data.answer);
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
                 alert(errorThrown);
             }
         });
-
-
-        return result;
     }
     function sub(){
         return 1;
