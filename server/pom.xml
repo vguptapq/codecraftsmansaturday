@@ -56,5 +56,12 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>main</groupId>
+			<artifactId>calculate-this</artifactId>
+			<systemPath>${project.basedir}/src/main/resources/lib/engine.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>system</scope>
+		</dependency>
 	</dependencies>
 </project>
