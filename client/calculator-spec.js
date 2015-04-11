@@ -4,6 +4,12 @@ describe('calculator', function() {
 
 	var c = calculator;
 
+	beforeEach(function() {
+		spyOn($, 'ajax').and.callFake( function (params) {
+			return 2;
+		});
+	});
+
 	it('should be defined', function() {
 		expect(c).toBeDefined();
 	});
@@ -26,10 +32,18 @@ describe('calculator', function() {
 
 	it('should send call send when we send add', function() {
 
-		var postMock = spyOn($, 'post').and.returnValue(2);
-		var result = c.add(1,1);
+		c.add(1,1);
 		expect(postMock).toHaveBeenCalled();
+	});
 
+	xit('should return hello when we call the server', function() {
+		spyOn( $, 'post' ).andCallFake( function (params) {
+			params.success({foo: '3'});
+		});
+		//var postMock = spyOn($, 'post').and.returnValue('hello');
+		debugger;
+		var result = c.add(2,1);
+		expect(result).toEqual('3');
 	});
 6
 });
