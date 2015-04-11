@@ -1,6 +1,7 @@
 package com.craftsman.calc.controller;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -26,12 +27,10 @@ public class MathsControllerTest {
     @Ignore
     @Test
     public void testMockAdd() {
-        ArrayList<Float> values = new ArrayList<Float>();
-        values.add(2f);
-        values.add(40f);
+        List<Double> values = Arrays.asList(2.0, 40.0);
         Mockito.when(service.calculate("add", values)).thenReturn(42.0f);
 
-        MathRequest request = new MathRequest(2.0f, 40.f, Operation.ADD);
+        MathRequest request = new MathRequest(2.0, 40.0, Operation.ADD);
         MathResponse response = controller.doMath(request);
         Assert.assertTrue(response.getAnswer() == 42.0f);
     }

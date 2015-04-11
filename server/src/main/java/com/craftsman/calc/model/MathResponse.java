@@ -4,19 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class MathResponse {
-    private Float answer;
+    private Double answer;
 
-    public MathResponse(Float answer) {
+    public MathResponse(Double answer) {
         this.setAnswer(answer);
     }
 
-    public Float getAnswer() {
+    public Double getAnswer() {
         return answer;
     }
 
-    public void setAnswer(Float answer) {
+    public void setAnswer(Double answer) {
         this.answer = answer;
     }
-
-
 }

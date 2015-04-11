@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.craftsman.calc.model.MathRequest;
 import com.craftsman.calc.model.MathResponse;
 
-import main.CalculateThis;
-
 @RestController
 @RequestMapping("/maths")
 public class MathsController {
@@ -21,7 +19,7 @@ public class MathsController {
 
     @RequestMapping(method=RequestMethod.GET)
     public MathResponse hi() {
-        return new MathResponse(0F);
+        return new MathResponse(0.0);
     }
 
 }

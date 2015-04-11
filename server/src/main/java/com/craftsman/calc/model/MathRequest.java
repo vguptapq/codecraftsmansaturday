@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MathRequest {
-    private Float a;
-    private Float b;
+    private Double a;
+    private Double b;
     private Operation operation;
 
     public MathRequest() {
     }
 
-    public MathRequest(Float a, Float b, Operation operation) {
+    public MathRequest(Double a, Double b, Operation operation) {
         this.a = a;
         this.b = b;
         this.operation = operation;
@@ -25,19 +25,19 @@ public class MathRequest {
         this.operation = operation;
     }
 
-    public Float getB() {
+    public Double getB() {
         return b;
     }
 
-    public void setB(Float b) {
+    public void setB(Double b) {
         this.b = b;
     }
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float a) {
+    public void setA(Double a) {
         this.a = a;
     }
 
