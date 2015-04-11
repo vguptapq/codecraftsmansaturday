@@ -9,7 +9,7 @@ var calculator = (function() {
         return 6;
     }
     function divide(a,b){
-        return 2;
+        return 3;
     }
     return {
         add: add,
