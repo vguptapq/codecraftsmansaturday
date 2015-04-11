@@ -1,4 +1,4 @@
-package be.g00glen00b;
+package com.craftsman.calc;
 
 
 import org.springframework.boot.SpringApplication;
