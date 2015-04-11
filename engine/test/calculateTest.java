@@ -72,11 +72,16 @@ public class calculateTest {
 	}
 	
 	@Test
-	public void testforsubtract() throws Exception {
+	public void testformultiply() throws Exception {
 		Calculator calculator = new Calculator ();
-		List<Double> inputs = Arrays.asList(1.0,1.0);
-		Double result = calculator.CalculateThisSetOfStuff(inputs, (Operations) 4);
-		assertEquals (result, 0.00, 0.00);
+		List<Double> inputs = Arrays.asList(2.0,2.0);
+		Double result = calculator.CalculateThisSetOfStuff (inputs,Operations.MULTIPLY);
+		assertEquals (4.00, result, 0.00);
+	}
+	
+	@Test 
+	public void testForDivision() throws Exception { 
+	
 	}
 	
 	
