@@ -15,7 +15,7 @@ var calculator = (function() {
     var serverUrl = 'http://192.168.192.128:8080/maths';
     var result = '';
 
-	function add(a,b){
+	function add(){
 
 		var obj = {
 			a: getFirstOperand(),
@@ -41,13 +41,13 @@ var calculator = (function() {
 
         return result;
     }
-    function sub(a,b){
+    function sub(){
         return 1;
     }
-    function mult(a,b){
+    function mult(){
         return 6;
     }
-    function divide(a,b){
+    function divide(){
         return 3;
     }
 
