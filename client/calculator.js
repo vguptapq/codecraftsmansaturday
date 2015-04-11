@@ -3,7 +3,7 @@ var calculator = (function() {
         return 2;
     }
     function sub(a,b){
-
+        return 1;
     }
     function mult(a,b){
 
@@ -12,7 +12,8 @@ var calculator = (function() {
 
     }
     return {
-        add: add
+        add: add,
+        sub: sub
     }
 
 })();
