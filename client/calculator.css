@@ -2,10 +2,21 @@
 	width: 25% !important;
 }
 
-div.centered {
+.centered {
     position: absolute;
+	top: 15%;
+	left: 25%;
+}
+
+.result {
+	margin-left: 5%;
+	margin-top: 1%;
 }
 
 body {
 	background-color: lightblue;
+}
+
+h1 {
+	
 }
