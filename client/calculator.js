@@ -38,7 +38,7 @@ var calculator = (function() {
             },
             error: function (jqXHR, textStatus, errorThrown)
             {
-                alert(errorThrown);
+                alert(textStatus);
             }
         });
     }
