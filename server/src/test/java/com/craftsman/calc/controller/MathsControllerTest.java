@@ -7,7 +7,6 @@ import main.CalculateThis;
 import main.Operations;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -26,7 +25,6 @@ public class MathsControllerTest {
     @Mock
     private CalculateThis service;
 
-    @Ignore
     @Test
     public void testMockAdd() throws Exception {
         List<Double> values = Arrays.asList(2.0, 40.0);
@@ -34,6 +32,26 @@ public class MathsControllerTest {
 
         MathRequest request = new MathRequest(2.0, 40.0, Operations.ADD);
         MathResponse response = controller.doMath(request);
-        Assert.assertTrue(response.getAnswer() == 42.0f);
+        Assert.assertTrue(response.getAnswer() == 42.0);
+    }
+
+    @Test
+    public void testMockMultiply() throws Exception {
+        List<Double> values = Arrays.asList(2.0, 40.0);
+        Mockito.when(service.CalculateThisSetOfStuff(values, Operations.MULTIPLY)).thenReturn(80.0);
+
+        MathRequest request = new MathRequest(2.0, 40.0, Operations.MULTIPLY);
+        MathResponse response = controller.doMath(request);
+        Assert.assertTrue(response.getAnswer() == 80.0);
+    }
+
+    @Test
+    public void testMockDivide() throws Exception {
+        List<Double> values = Arrays.asList(42.0, 2.0);
+        Mockito.when(service.CalculateThisSetOfStuff(values, Operations.DIVIDE)).thenReturn(21.0);
+
+        MathRequest request = new MathRequest(42.0, 2.0, Operations.DIVIDE);
+        MathResponse response = controller.doMath(request);
+        Assert.assertTrue(response.getAnswer() == 21.0);
     }
 }
