@@ -1,5 +1,6 @@
 # codecraftsmansaturday
-calculator project
+
+Welcome to ICC, Incremental Calculator Corp.  Today you are going to build the first ever micro-service-based massively-scalable calculator.
 
 __Features__ -- in value rank order:
 
