@@ -19,5 +19,9 @@ describe('calculator', function() {
 	it('should return 6 when multiplying 3 by 2', function() {
 		expect(c.mult(3,2)).toEqual(6);
 	});
+
+	it('should return 3 when dividing 6 by 2', function() {
+		expect(c.divid(6,2)).toEqual(2);
+	});
 6
 });

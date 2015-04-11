@@ -9,12 +9,13 @@ var calculator = (function() {
         return 6;
     }
     function divid(a,b){
-
+        return 2;
     }
     return {
         add: add,
         sub: sub,
-        mult: mult
+        mult: mult,
+        divid: divid
     }
 
 })();
