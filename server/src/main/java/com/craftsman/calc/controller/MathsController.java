@@ -1,5 +1,6 @@
 package com.craftsman.calc.controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,13 +13,13 @@ import com.craftsman.calc.model.MathResponse;
 public class MathsController {
 
     @RequestMapping(method=RequestMethod.POST)
-    public MathResponse doMath(MathRequest request) {
-        return null;
+    public MathResponse doMath(@RequestBody MathRequest request) {
+        return new MathResponse(request.getA());
     }
 
     @RequestMapping(method=RequestMethod.GET)
-    public String hi() {
-        return "hello";
+    public MathResponse hi() {
+        return new MathResponse(0F);
     }
 
 }
