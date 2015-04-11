@@ -2,6 +2,10 @@
 	width: 25% !important;
 }
 
+div.centered {
+    position: absolute;
+}
+
 body {
 	background-color: lightblue;
 }
