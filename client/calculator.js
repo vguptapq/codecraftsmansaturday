@@ -1,5 +1,9 @@
 var calculator = (function() {
+
+    var result = '';
+
 	function add(a,b){
+        $.post('', a, b);
         return 2;
     }
     function sub(a,b){

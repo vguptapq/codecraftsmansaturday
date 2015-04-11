@@ -23,5 +23,13 @@ describe('calculator', function() {
 	it('should return 3 when dividing 6 by 2', function() {
 		expect(c.divide(6,2)).toEqual(3);
 	});
+
+	it('should send call send when we send add', function() {
+
+		var postMock = spyOn($, 'post').and.returnValue(2);
+		var result = c.add(1,1);
+		expect(postMock).toHaveBeenCalled();
+
+	});
 6
 });
